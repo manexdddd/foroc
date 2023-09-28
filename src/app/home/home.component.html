@@ -1,0 +1,73 @@
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+          <div class="card mt-3 mb-3 ">
+         <div class="card-header">Agregar pregunta</div> 
+     <div class="card-body">
+    <select class="form-select  mb-3" [(ngModel)]="newP.categoria" name="" id="">
+ <option value="General" selected>General</option>
+ <option value="Programacion">Programacion</option>
+ <option value="Redes">Redes</option>
+    </select>
+
+   <input type="text" class="form-control mb-3" [(ngModel)]="newP.pregunta">
+   <button class="btn btn-outline-info"><i class="bi bi-cloud-upload"  (click)="crearPregunta()"></i>
+
+</button>
+     </div>
+          </div>
+
+        </div>
+        <div class="col"></div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-hover"> <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Pregunta</th>
+                    <th>Usuario</th>
+                    <th></th>
+                </tr>
+                
+            </thead>
+            <tbody >
+                  <tr *ngFor="let p of preguntas">
+                    <td>{{p.no}}</td>
+                    <td>{{p.pregunta}}</td>
+                    <td>{{p.correo}}</td>
+                    <td class="text-end "><button class=" btn btn-outline-secondary"><i class="bi bi-arrow-right-circle-fill"></i></button>
+                        &nbsp;
+                        <button class=" btn btn-outline-info" (click)="editarPregunta(p)" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="bi bi-pencil-square"></i></button>
+                        &nbsp;
+                        <button class=" btn btn-outline-danger"(click)="eliminarPregunta(p.id)"><i class="bi bi-trash-fill"></i></button>
+                    </td>
+                </tr>  
+            </tbody>
+          
+        </table>
+            
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modificar pregunta</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control mb-3" [(ngModel)]="mod.pregunta">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="modificarPregunta()">Guardar</button>
+        </div>
+      </div>
+    </div>
+  </div>

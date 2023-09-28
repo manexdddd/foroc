@@ -1,0 +1,54 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      
+        <span class="nabvbar-Brand">
+            <i class="bi bi-chat-dots-fill"></i>
+            Foro Dudas ITSCH</span>
+        
+    </div>
+  </nav>
+
+<div class="container">
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+<div class="col">
+    
+<div class="card mt-3">
+    
+    <div class="card-header">Registro de usuario<i class="bi bi-person"></i></div>
+<div class="card-body">
+<div class="input-group">
+<span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
+
+<input type="email" class="form-control" placeholder="Correo" [(ngModel)]="email">
+</div>
+<div class="input-group mt-3">
+    <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+    <input type="password" class="form-control" placeholder="Contrasenia" [(ngModel)]="pass">
+    
+    </div>
+    <div class="alert alert-danger mt-3" role="alert" *ngIf="showError">
+        <i class="bi bi-exclamation-triangle-fill"></i> Ups Algo salio mal :/
+
+    </div>
+
+
+</div>
+<div class="card-footer text-center">
+
+    
+    <button class="btn btn-primary " value="Entrar" (click)="registro()" [disabled]="showLoading">
+        <div class="spinner-border spinner-border-sm" *ngIf="showLoading" ></div>
+        Entrar
+    </button>
+    </div>
+</div>
+</div>
+
+    </div>
+    <div class="col"></div>
+</div>
+
+
+</div>

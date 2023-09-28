@@ -1,0 +1,58 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="container-fluid">
+      
+        <span class="nabvbar-Brand">
+            <i class="bi bi-chat-dots-fill"></i>
+            Foro Dudas ITSCH</span>
+        
+    </div>
+  </nav>
+
+<div class="container">
+<div class="row">
+    <div class="col"></div>
+    <div class="col">
+<div class="col">
+    
+<div class="card mt-3">
+    
+    <div class="card-header">Inicio sesion<i class="bi bi-person"></i></div>
+<div class="card-body">
+<div class="input-group">
+<span class="input-group-text"><i class="bi bi-envelope-at"></i></span>
+
+<input type="email" class="form-control" placeholder="Correo" [(ngModel)]="email">
+</div>
+<div class="input-group mt-3">
+    <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+    <input type="password" class="form-control" placeholder="Contrasenia" [(ngModel)]="pass">
+    
+    </div>
+    <div class="alert alert-danger mt-3" role="alert" *ngIf="showError">
+        <i class="bi bi-exclamation-triangle-fill"></i> El Correo o Contrasenia es Incorrecta!
+
+    </div>
+
+
+</div>
+<div class="card-footer text-end">
+
+    
+    <button class="btn btn-primary mt-2 " value="Entrar" (click)="login()" [disabled]="showLoading">
+        <div class="spinner-border spinner-border-sm"  *ngIf="showLoading"></div>
+        Entrar
+    </button>
+    
+ 
+</div>
+
+    </div>
+    <p class="py-2 fw-light"><a href="signup" class="link-info link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Sin cuenta? Registrate Aqui</a></p>
+</div>
+
+    </div>
+    <div class="col"></div>
+</div>
+
+
+</div>
